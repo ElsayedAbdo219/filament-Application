@@ -2,15 +2,14 @@
 
 namespace App\Filament\Pages;
 
-use Filament\Pages\Page;
-
-class Dashboard extends Page
+use Filament\Pages\Dashboard as BaseDashboard;
+class Dashboard extends BaseDashboard
 {
-    protected string $view = 'filament.pages.dashboard';
     public function getWidgets(): array
     {
         return [
-            \App\Livewire\MyWidget::class, // الـ Widget اللي انت عملته
+            \App\Livewire\MyWidget::class,
+            \App\Filament\Widgets\PostsChart::class,
         ];
     }
 }
