@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Products\Schemas;
+namespace App\Filament\Resources\Messages\Schemas;
 
 use Filament\Schemas\Schema;
 
-class ProductForm
+class MessageInfolist
 {
     public static function configure(Schema $schema): Schema
     {
