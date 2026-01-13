@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            
-            # Start json fields (multiple values => casting to array in model) #
-            $table->json('email');
-            $table->json('phone');
-            $table->json('address');
-            $table->json('url_social_media');
-            # End json fields (multiple values => casting to array in model) #
+            $table->string('file_name')->nullable();
+            $table->string('icon');
+            $table->string('published_at');
+            $table->string('category_name');
+            $table->string('comments_count')->default(0);
+            $table->string('auther_name')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('blog_posts');
     }
 };

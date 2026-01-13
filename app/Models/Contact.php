@@ -22,21 +22,35 @@ class Contact extends Model
         'url_social_media' => 'array',
     ];
 
-    # accessors
-    public function getEmailAttribute($value)
+    // ======================
+    // Accessors
+    // ======================
+
+    public function getEmailAttribute($value): string
     {
-        return json_decode($value, true);
+        return collect($value ?? [])
+            ->pluck('email')
+            ->implode(', ');
     }
-    public function getPhoneAttribute($value)
+
+    public function getPhoneAttribute($value): string
     {
-        return json_decode($value, true);
+        return collect($value ?? [])
+            ->pluck('phone')
+            ->implode(', ');
     }
-    public function getAddressAttribute($value)
+
+    public function getAddressAttribute($value): string
     {
-        return json_decode($value, true);
+        return collect($value ?? [])
+            ->pluck('address')
+            ->implode(', ');
     }
-    public function getUrlSocialMediaAttribute($value)
+
+    public function getUrlSocialMediaAttribute($value): string
     {
-        return json_decode($value, true);
+        return collect($value ?? [])
+            ->pluck('url_social_media')
+            ->implode(', ');
     }
 }

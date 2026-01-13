@@ -16,7 +16,8 @@ class ContactsTable
             ->columns([
                 TextColumn::make('title')->label('Title'),
                 TextColumn::make('description')->label('Description'),
-                TextColumn::make('email')->label('Email')->formatStateUsing(fn ($state) => is_array($state) ? implode(', ', $state) : $state),
+                TextColumn::make('email')->label('Email')
+                ->formatStateUsing(fn ($state) => is_array($state) ? implode(', ', $state) : $state),
                 TextColumn::make('phone')->label('Phone')->formatStateUsing(fn ($state) => is_array($state) ? implode(', ', $state) : $state),
                 TextColumn::make('address')->label('Address')->formatStateUsing(fn ($state) => is_array($state) ? implode(', ', $state) : $state),
                 TextColumn::make('url_social_media')->label('Social Media URLs')->formatStateUsing(fn ($state) => is_array($state) ? implode(', ', $state) : $state),

@@ -11,17 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            
-            # Start json fields (multiple values => casting to array in model) #
-            $table->json('email');
-            $table->json('phone');
-            $table->json('address');
-            $table->json('url_social_media');
-            # End json fields (multiple values => casting to array in model) #
             $table->timestamps();
         });
     }
@@ -31,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('blogs');
     }
 };
