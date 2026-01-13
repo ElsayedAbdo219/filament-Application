@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('team_skills', function (Blueprint $table) {
+        Schema::create('team_skill_percentages', function (Blueprint $table) {
             $table->id();
-            $table->string('icon');
-            $table->string('title');
-            $table->text('description');
+            $table->string('skill_name');
+            $table->integer('percentage');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('team_skills');
+        Schema::dropIfExists('team_skill_percentages');
     }
 };

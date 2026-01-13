@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PortfolioCategory extends Model
+class TeamSkillPercentage extends Model
 {
     protected $fillable = [
-        'name',
+        'skill_name',
+        'percentage',
     ];
 }
