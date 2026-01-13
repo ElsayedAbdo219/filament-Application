@@ -2,10 +2,13 @@
 
 namespace App\Filament\Resources\Teams\Tables;
 
+use Dom\Text;
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 class TeamsTable
 {
@@ -13,7 +16,9 @@ class TeamsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->sortable()->searchable(),
+                TextColumn::make('description')->label('Description')->sortable()->searchable(),
+                ImageColumn::make('icon')->label('Icon')->sortable()->searchable(),
             ])
             ->filters([
                 //

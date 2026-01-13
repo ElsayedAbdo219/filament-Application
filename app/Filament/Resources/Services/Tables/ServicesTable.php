@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\Services\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 class ServicesTable
 {
@@ -13,7 +15,10 @@ class ServicesTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('description')->label('Description')->sortable()->searchable(),
+                TextColumn::make('secondary_title')->label('Secondary Title')->sortable()->searchable(),
+                TextColumn::make('secondary_title_description')->label('Secondary Description')->sortable()->searchable(),
+                ImageColumn::make('icon')->label('Icon')->sortable()->searchable(), 
             ])
             ->filters([
                 //

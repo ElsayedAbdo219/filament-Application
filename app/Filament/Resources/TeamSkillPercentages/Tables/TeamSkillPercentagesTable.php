@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\TeamSkillPercentages\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
 class TeamSkillPercentagesTable
 {
@@ -13,7 +14,8 @@ class TeamSkillPercentagesTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('skill_name')->label('Skill Name')->sortable()->searchable(),
+                TextColumn::make('percentage')->label('Percentage')->sortable()->searchable(),
             ])
             ->filters([
                 //

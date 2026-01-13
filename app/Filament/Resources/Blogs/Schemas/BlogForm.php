@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Blogs\Schemas;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class BlogForm
@@ -10,7 +11,8 @@ class BlogForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('title')->label('Title')->required()->maxLength(255)->placeholder('Enter the blog title here...'),
+                TextInput::make('description')->label('Description')->required()->maxLength(65535)->placeholder('Enter the blog description here...'),
             ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\PortfolioCategories\Schemas;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class PortfolioCategoryForm
@@ -10,7 +11,10 @@ class PortfolioCategoryForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->label('Name')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 }

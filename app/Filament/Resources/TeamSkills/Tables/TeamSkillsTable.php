@@ -13,7 +13,9 @@ class TeamSkillsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->sortable()->searchable(),
+                TextColumn::make('description')->label('Description')->sortable()->searchable(),
+                ImageColumn::make('icon')->label('Icon')->sortable()->searchable(),
             ])
             ->filters([
                 //

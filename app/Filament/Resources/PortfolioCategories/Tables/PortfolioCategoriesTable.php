@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\PortfolioCategories\Tables;
 
+use Dom\Text;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class PortfolioCategoriesTable
@@ -13,7 +15,7 @@ class PortfolioCategoriesTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')->label('Name')->sortable()->searchable(),
             ])
             ->filters([
                 //

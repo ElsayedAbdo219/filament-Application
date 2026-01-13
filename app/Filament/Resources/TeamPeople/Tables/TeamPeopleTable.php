@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\TeamPeople\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 class TeamPeopleTable
 {
@@ -13,7 +15,10 @@ class TeamPeopleTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->sortable()->searchable(),
+                TextColumn::make('description')->label('Description')->sortable()->searchable(),
+                ImageColumn::make('icon')->label('Icon')->sortable()->searchable(),
+                ImageColumn::make('small_icons')->label('Small Icons')->sortable()->searchable(),
             ])
             ->filters([
                 //

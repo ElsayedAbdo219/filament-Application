@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\Portfolios\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
 class PortfoliosTable
 {
@@ -13,7 +14,8 @@ class PortfoliosTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->sortable()->searchable(),
+                TextColumn::make('created_at')->label('Created At')->date()->sortable(),
             ])
             ->filters([
                 //

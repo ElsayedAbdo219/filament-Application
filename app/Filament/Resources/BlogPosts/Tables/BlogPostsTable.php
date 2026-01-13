@@ -5,6 +5,7 @@ namespace App\Filament\Resources\BlogPosts\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class BlogPostsTable
@@ -13,7 +14,14 @@ class BlogPostsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->label('Title')->sortable()->searchable(),
+                TextColumn::make('description')->label('Description')->limit(50)->wrap(),
+                TextColumn::make('category_name')->label('Category')->sortable()->searchable(),
+                TextColumn::make('auther_name')->label('Author')->sortable()->searchable(),
+                TextColumn::make('comments_count')->label('Comments')->sortable(),
+                TextColumn::make('published_at')->label('Published At')->date()->sortable(),
+                TextColumn::make('created_at')->label('Created At')->date()->sortable(),
+
             ])
             ->filters([
                 //
