@@ -18,6 +18,7 @@ class ServiceCardsTable
                 TextColumn::make('title')->label('Title')->sortable()->searchable(),
                 TextColumn::make('description')->label('Description')->sortable()->searchable(),
                 ImageColumn::make('icon')->label('Icon')->sortable()->searchable(),
+                TextColumn::make('created_at')->label('Created At')->dateTime()->sortable(),
             ])
             ->filters([
                 //

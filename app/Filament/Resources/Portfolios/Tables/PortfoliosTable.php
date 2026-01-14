@@ -17,6 +17,7 @@ class PortfoliosTable
                 TextColumn::make('title')->label('Title')->sortable()->searchable(),
                 TextColumn::make('created_at')->label('Created At')->date()->sortable(),
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])

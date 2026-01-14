@@ -18,8 +18,9 @@ class ServicesTable
                 TextColumn::make('description')->label('Description')->sortable()->searchable(),
                 TextColumn::make('secondary_title')->label('Secondary Title')->sortable()->searchable(),
                 TextColumn::make('secondary_title_description')->label('Secondary Description')->sortable()->searchable(),
-                ImageColumn::make('icon')->label('Icon')->sortable()->searchable(), 
+                ImageColumn::make('icon')->label('Icon'), 
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])

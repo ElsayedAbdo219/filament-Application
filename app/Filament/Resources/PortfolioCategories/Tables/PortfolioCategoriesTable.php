@@ -16,6 +16,7 @@ class PortfolioCategoriesTable
         return $table
             ->columns([
                 TextColumn::make('name')->label('Name')->sortable()->searchable(),
+                TextColumn::make('created_at')->label('Created At')->date()->sortable(),
             ])
             ->filters([
                 //

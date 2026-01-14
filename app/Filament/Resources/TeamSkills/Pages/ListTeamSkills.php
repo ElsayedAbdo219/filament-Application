@@ -12,6 +12,9 @@ class ListTeamSkills extends ListRecords
 
     protected function getHeaderActions(): array
     {
+      if(TeamSkillResource::getModel()::count() >=1){
+        return [];
+      }
         return [
             CreateAction::make(),
         ];

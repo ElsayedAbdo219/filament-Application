@@ -2,10 +2,8 @@
 
 namespace App\Filament\Resources\TeamSkillPercentages\Schemas;
 
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Filament\Tables\Columns\TextColumn;
 
 class TeamSkillPercentageForm
 {
@@ -13,8 +11,18 @@ class TeamSkillPercentageForm
     {
         return $schema
             ->components([
-                TextInput::make('skill_name')->label('Skill Name')->sortable()->required()->searchable(),
-                Textarea::make('percentage')->label('Percentage')->sortable()->number()->required()->searchable(),
+                TextInput::make('skill_name')
+                    ->label('Skill Name')
+                    ->required(),
+
+                TextInput::make('percentage')
+                    ->label('Percentage')
+                    ->numeric()
+                    ->required()
+                    ->suffix('%')
+                    ->minValue(0)
+                    ->maxValue(100),
+
             ]);
     }
 }

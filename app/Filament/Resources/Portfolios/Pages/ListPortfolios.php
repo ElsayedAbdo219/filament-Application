@@ -12,6 +12,9 @@ class ListPortfolios extends ListRecords
 
     protected function getHeaderActions(): array
     {
+      if(PortfolioResource::getModel()::count() >=1){
+          return [];
+      }
         return [
             CreateAction::make(),
         ];

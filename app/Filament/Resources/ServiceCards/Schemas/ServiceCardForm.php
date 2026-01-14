@@ -13,8 +13,8 @@ class ServiceCardForm
         return $schema
             ->components([
                 TextInput::make('title')->label('Title')->required()->maxLength(255)->placeholder('Enter the service card title here...'),
-                TextInput::make('description')->label('Description')->required()->maxLength(65535)->placeholder('Enter the service card description here...'),
-                FileUpload::make('icon')->label('Icon')->required()->maxLength(255)->placeholder('Enter the service card icon here...'),
+                TextInput::make('description')->label('Description')->required()->placeholder('Enter the service card description here...'),
+                FileUpload::make('icon')->label('Icon')->required()->placeholder('Enter the service card icon here...'),
             ]);
     }
 }

@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\TeamSkills\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 class TeamSkillsTable
 {
@@ -17,6 +19,7 @@ class TeamSkillsTable
                 TextColumn::make('description')->label('Description')->sortable()->searchable(),
                 ImageColumn::make('icon')->label('Icon')->sortable()->searchable(),
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])
