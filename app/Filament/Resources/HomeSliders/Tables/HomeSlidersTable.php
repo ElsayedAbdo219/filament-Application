@@ -16,7 +16,7 @@ class HomeSlidersTable
         return $table
             ->columns([
                 TextColumn::make('title')->label('Title')->sortable()->searchable(),
-                ImageColumn::make('image')->label('Slider Image'),
+                ImageColumn::make('file_name')->label('Slider Image'),
                 TextColumn::make('created_at')->label('Created At')->date()->sortable(),
             ])
             ->filters([

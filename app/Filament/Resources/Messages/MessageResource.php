@@ -55,7 +55,7 @@ class MessageResource extends Resource
     {
         return [
             'index' => ListMessages::route('/'),
-            'view' => ViewMessage::route('/{record}'),
+            // 'view' => ViewMessage::route('/{record}'),
         ];
     }
 

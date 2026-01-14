@@ -19,6 +19,7 @@ class BlogsTable
                 TextColumn::make('created_at')->label('Created At')->date()->sortable(),
 
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])

@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\Contacts\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Image;
 
 class ContactForm
 {
@@ -16,6 +18,7 @@ class ContactForm
                 // Define form components here
               TextInput::make('title')->label('Title'),
               Textarea::make('description')->label('Description'),
+              FileUpload::make('icon')->label('Icon')->image()->directory('contacts/icons')->columnSpan('full'),
               Repeater::make('phone')->label('Phone Numbers')
                     ->schema([
                         TextInput::make('phone')->label('Phone Number')->required(),

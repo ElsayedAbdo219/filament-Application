@@ -12,6 +12,9 @@ class ListBlogs extends ListRecords
 
     protected function getHeaderActions(): array
     {
+      if(BlogResource::getModel()::count() >= 1){
+          return [];
+      }
         return [
             CreateAction::make(),
         ];

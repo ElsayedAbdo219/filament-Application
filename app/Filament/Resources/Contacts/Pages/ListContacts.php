@@ -12,6 +12,9 @@ class ListContacts extends ListRecords
 
     protected function getHeaderActions(): array
     {
+      if(ContactResource::getModel()::count() >= 1){
+          return [];
+      }
         return [
             CreateAction::make(),
         ];
