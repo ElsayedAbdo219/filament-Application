@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Homes\Pages;
 
-use App\Filament\Resources\Homes\HomeResource;
+use App\Models\Home;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\Homes\HomeResource;
 
 class ListHomes extends ListRecords
 {
@@ -12,8 +13,11 @@ class ListHomes extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [
-            CreateAction::make(),
-        ];
+      if (Home::count() >= 1)
+          return [];
+        else
+          return [
+            CreateAction::make()
+          ];
     }
 }

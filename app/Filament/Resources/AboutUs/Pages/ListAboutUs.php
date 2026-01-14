@@ -12,6 +12,9 @@ class ListAboutUs extends ListRecords
 
     protected function getHeaderActions(): array
     {
+      if (AboutUsResource::getModel()::count() >= 1) {
+          return [];
+      }
         return [
             CreateAction::make(),
         ];

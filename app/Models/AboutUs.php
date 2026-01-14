@@ -9,8 +9,6 @@ class AboutUs extends Model
     protected $table = 'about_us';
 
     protected $fillable = [
-        'title',
         'description',
-        'image_path',
     ];
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('file_name')->nullable();
             $table->string('icon');
-            $table->string('published_at');
+            $table->string('published_date');
             $table->string('category_name');
             $table->string('comments_count')->default(0);
             $table->string('auther_name')->nullable();

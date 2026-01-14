@@ -25,6 +25,7 @@ class HomesTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->paginated(false)
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

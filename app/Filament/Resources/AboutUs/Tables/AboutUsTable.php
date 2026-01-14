@@ -15,6 +15,7 @@ class AboutUsTable
         return $table
             ->columns([
                 TextColumn::make('description')->label('Description')->limit(50),
+                TextColumn::make('created_at')->label('Created At')->dateTime('d M Y H:i')
             ])
             ->filters([
                 //
@@ -22,6 +23,7 @@ class AboutUsTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->paginated(false)
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

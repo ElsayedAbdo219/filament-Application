@@ -2,11 +2,13 @@
 
 namespace App\Filament\Resources\BlogPosts\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
+use Filament\Schemas\Components\Image;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 
 class BlogPostsTable
 {
@@ -16,6 +18,8 @@ class BlogPostsTable
             ->columns([
                 TextColumn::make('title')->label('Title')->sortable()->searchable(),
                 TextColumn::make('description')->label('Description')->limit(50)->wrap(),
+                ImageColumn::make('icon')->label('Icon')->rounded(),
+                ImageColumn::make('file_name')->label('Media')->rounded(),
                 TextColumn::make('category_name')->label('Category')->sortable()->searchable(),
                 TextColumn::make('auther_name')->label('Author')->sortable()->searchable(),
                 TextColumn::make('comments_count')->label('Comments')->sortable(),

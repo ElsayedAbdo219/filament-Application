@@ -47,4 +47,9 @@ class HomeResource extends Resource
             'edit' => EditHome::route('/{record}/edit'),
         ];
     }
+
+    public static function canCreate(): bool
+    {
+        return Home::count() < 1;
+    }
 }

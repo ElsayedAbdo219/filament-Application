@@ -10,8 +10,8 @@ class Dashboard extends Page
     public function getWidgets(): array
     {
         return [
-            \App\Livewire\MyWidget::class,
-            \App\Filament\Widgets\PostsChart::class,
+            // \App\Livewire\MyWidget::class,
+            // \App\Filament\Widgets\PostsChart::class,
         ];
     }
 }
