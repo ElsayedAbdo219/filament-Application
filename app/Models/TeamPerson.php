@@ -13,4 +13,7 @@ class TeamPerson extends Model
         'description',
         'small_icons',
     ];
+    protected $casts = [
+        'small_icons' => 'array',
+    ];
 }

@@ -33,7 +33,7 @@ class BlogPostForm
                         'image/*',
                         'video/*',
                     ])
-                    ->maxSize(10240) // 10MB
+                    ->maxSize(10240) # 10MB
                     ->nullable(),
                 FileUpload::make('icon')
                     ->label('Upload Icon')
