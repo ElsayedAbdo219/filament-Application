@@ -16,7 +16,7 @@ class BlogPost extends Model
         'category_name',
         'auther_name',
         'comments_count',
-        'published_Date',
+        'published_date',
     ];
     
 }
