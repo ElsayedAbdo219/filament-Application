@@ -40,9 +40,9 @@ class BlogPostForm
                     ->image()
                     ->directory('blogs')
                     ->maxSize(1024),
-              DatePicker::make('published_at')
-    ->label('Published At')
-    ->required(),
+              DatePicker::make('published_date')
+                ->label('Published Date')
+                 ->required(),
                 TextInput::make('category_name')
                     ->label('Category Name')
                     ->required()

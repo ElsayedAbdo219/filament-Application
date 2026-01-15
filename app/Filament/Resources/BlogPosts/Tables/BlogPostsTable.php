@@ -23,7 +23,7 @@ class BlogPostsTable
                 TextColumn::make('category_name')->label('Category')->sortable()->searchable(),
                 TextColumn::make('auther_name')->label('Author')->sortable()->searchable(),
                 TextColumn::make('comments_count')->label('Comments')->sortable(),
-                TextColumn::make('published_at')->label('Published At')->date()->sortable(),
+                TextColumn::make('published_date')->label('Published Date')->date()->sortable(),
                 TextColumn::make('created_at')->label('Created At')->date()->sortable(),
 
             ])

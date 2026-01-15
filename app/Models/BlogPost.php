@@ -16,9 +16,7 @@ class BlogPost extends Model
         'category_name',
         'auther_name',
         'comments_count',
-        'published_at',
+        'published_Date',
     ];
-    // protected $casts = [
-    //     'published_at' => 'string',
-    // ];
+    
 }
