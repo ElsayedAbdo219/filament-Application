@@ -2,33 +2,61 @@
 
 namespace App\Filament\Resources\Contacts\Tables;
 
-use App\Models\Contact;
-use Dom\Implementation;
-use Filament\Tables\Table;
-use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
 class ContactsTable
 {
+
     public static function configure(Table $table): Table
     {
-      // dd(Contact::all());
+      
         return $table
             ->columns([
                 TextColumn::make('title')->label('Title'),
                 TextColumn::make('description')->label('Description'),
                 ImageColumn::make('icon')->label('Icon'),
-                TextColumn::make('email')->label('Email Addresses')->limit(50)->wrap(),
-                TextColumn::make('phone')->label('Phone Numbers')->limit(50)->wrap(),
-                TextColumn::make('address')->label('Addresses')->limit(50)->wrap(),
-                TextColumn::make('url_social_media')->label('Social Media URLs')->limit(50)->wrap(),
+
+                TextColumn::make('email')
+                    ->label('Email')
+                    ->formatStateUsing(fn ($record) => collect($record->email ?? [])
+                        ->map(fn ($item) => $item['email'] ?? null)
+                        ->filter()
+                        ->implode(', ')
+                    ),
+
+                TextColumn::make('phone')
+                    ->label('Phone')
+                    ->formatStateUsing(fn ($record) => collect($record->phone ?? [])
+                        ->map(fn ($item) => $item['phone'] ?? null)
+                        ->filter()
+                        ->implode(', ')
+                    ),
+
+                TextColumn::make('address')
+                    ->label('Address')
+                    ->formatStateUsing(fn ($record) => collect($record->address ?? [])
+                        ->map(fn ($item) => $item['address'] ?? null)
+                        ->filter()
+                        ->implode(', ')
+                    ),
+
+                TextColumn::make('url_social_media')
+                    ->label('Social Media')
+                    ->formatStateUsing(fn ($record) => collect($record->url_social_media ?? [])
+                        ->map(fn ($item) => $item['url_social_media'] ?? null)
+                        ->filter()
+                        ->implode(', ')
+                    ),
+
             ])
             ->paginated(false)
             ->filters([
-                //
+                // أي فلترات لو حبيت تضيفها
             ])
             ->recordActions([
                 EditAction::make(),

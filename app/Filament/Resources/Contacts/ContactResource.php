@@ -2,23 +2,28 @@
 
 namespace App\Filament\Resources\Contacts;
 
-use App\Filament\Resources\Contacts\Pages\CreateContact;
+use BackedEnum;
+use App\Models\Contact;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use Filament\Support\Icons\Heroicon;
+use Illuminate\Database\Eloquent\Model;
 use App\Filament\Resources\Contacts\Pages\EditContact;
 use App\Filament\Resources\Contacts\Pages\ListContacts;
+use App\Filament\Resources\Contacts\Pages\CreateContact;
 use App\Filament\Resources\Contacts\Schemas\ContactForm;
 use App\Filament\Resources\Contacts\Tables\ContactsTable;
-use App\Models\Contact;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 
 class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    public static function getRecordTitle(?Model $record): string|null
+{
+    return 'Contact #' . $record->id;
+}
 
     protected static ?string $recordTitleAttribute = 'email';
 
@@ -38,6 +43,8 @@ class ContactResource extends Resource
             //
         ];
     }
+
+    
 
     public static function getPages(): array
     {
