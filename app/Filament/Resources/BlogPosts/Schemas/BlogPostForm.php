@@ -28,6 +28,8 @@ class BlogPostForm
                 FileUpload::make('file_name')
                     ->label('Upload File (img / video) - optional')
                     ->disk('public')
+                    ->maxSize(1024*1024*1024) // 1 GB
+                    //  ->enableReordering()
                     ->directory('blogs')
                     ->visibility('public')
                     ->acceptedFileTypes([

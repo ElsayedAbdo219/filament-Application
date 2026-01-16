@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class BlogPost extends Model
+class BlogPost extends Model implements HasMedia
 {
+   use InteractsWithMedia;
     protected $table = 'blog_posts';
 
     protected $fillable = [
