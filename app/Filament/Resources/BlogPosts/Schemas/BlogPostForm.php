@@ -29,17 +29,13 @@ class BlogPostForm
                     ->label('Upload File (img / video) - optional')
                     ->disk('public')
                     ->directory('blogs')
+                    ->visibility('public')
                     ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/png',
-                        'image/webp',
-                        'image/gif',
-                        'video/mp4',
-                        'video/webm',
-                        'video/ogg',
+                        'image/*',
+                        'video/*',
                     ])
-                    ->maxSize(10240) // 10MB
                     ->nullable(),
+
                 FileUpload::make('icon')
                     ->label('Upload Icon')
                     ->image()
