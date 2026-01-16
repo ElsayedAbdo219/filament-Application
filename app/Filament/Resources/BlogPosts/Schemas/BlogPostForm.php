@@ -2,11 +2,11 @@
 
 namespace App\Filament\Resources\BlogPosts\Schemas;
 
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
 
 class BlogPostForm
 {
@@ -30,19 +30,24 @@ class BlogPostForm
                     ->disk('public')
                     ->directory('blogs')
                     ->acceptedFileTypes([
-                        'image/*',
-                        'video/*',
+                        'image/jpeg',
+                        'image/png',
+                        'image/webp',
+                        'image/gif',
+                        'video/mp4',
+                        'video/webm',
+                        'video/ogg',
                     ])
-                    ->maxSize(10240) # 10MB
+                    ->maxSize(10240) // 10MB
                     ->nullable(),
                 FileUpload::make('icon')
                     ->label('Upload Icon')
                     ->image()
                     ->directory('blogs')
                     ->maxSize(1024),
-              DatePicker::make('published_date')
-                ->label('Published Date')
-                 ->required(),
+                DatePicker::make('published_date')
+                    ->label('Published Date')
+                    ->required(),
                 TextInput::make('category_name')
                     ->label('Category Name')
                     ->required()
