@@ -14,22 +14,6 @@ class BlogPostsTable
 {
     public static function configure(Table $table): Table
     {
-        // $rows = BlogPost::all()->map(function ($post) {
-        //     return [
-        //         'title' => $post->title,
-        //         'description' => $post->description,
-        //         'icon' => $post->icon,
-        //         'file_name' => $post->file_name,
-        //         'category_name' => $post->category_name,
-        //         'auther_name' => $post->auther_name,
-        //         'comments_count' => $post->comments_count,
-        //         'published_date' => $post->published_date,
-        //         'created_at' => $post->created_at,
-        //     ];
-        // });
-
-        // dd($rows->toArray()); // ⚡ هنا هتشوف كل الـ rows كـ array
-
         return $table
             ->columns([
                 TextColumn::make('title')->label('Title')->sortable()->searchable(),
