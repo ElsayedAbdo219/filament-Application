@@ -9,10 +9,11 @@ Route::get('/status', function () {
 });
 
 Route::post('/test-summary-ai', function (Request $request) {
+
     $response = OpenAI::responses()->create([
         'model' => 'gpt-5',
-        'input' => $request->input('text'),
+        'input' => 'Hello!',
     ]);
 
-    return $response;
+    echo $response->outputText; // Hello! How can I assist you today?
 });
