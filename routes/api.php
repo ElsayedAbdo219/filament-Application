@@ -12,7 +12,7 @@ Route::post('/test-summary-ai', function (Request $request) {
    try {
         $response = OpenAI::responses()->create([
             'model' => 'gpt-5',
-            'input' => $request->input('text'),
+            'input' => "الفرق بين java , Golang , Nodejs",
         ]);
 
         return response()->json(['output' => $response->outputText]);
